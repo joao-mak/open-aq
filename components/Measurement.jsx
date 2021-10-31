@@ -6,10 +6,12 @@ import { windowHeight, windowWidth } from '../utils/constants'
 const Measurement = ({ measurement }) => {
   return (
     <View style={styles.container}>
-      <Text>{`Date: ${measurement.date.local}`}</Text>
-      <Text>{`Parameter: ${measurement.parameter}`}</Text>
-      <Text>{`Unit: ${measurement.unit}`}</Text>
-      <Text>{`Value: ${measurement.value}`}</Text>
+      <Text style={styles.details}>{`Date: ${measurement.date.local}`}</Text>
+      <Text
+        style={styles.details}
+      >{`Parameter: ${measurement.parameter}`}</Text>
+      <Text style={styles.details}>{`Unit: ${measurement.unit}`}</Text>
+      <Text style={styles.details}>{`Value: ${measurement.value}`}</Text>
     </View>
   )
 }
@@ -23,13 +25,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
-  title: {
-    alignSelf: 'center',
-    textAlign: 'center',
-    fontSize: 25,
-  },
   details: {
-    fontSize: 18,
+    fontSize: 15,
     textAlign: 'center',
     alignSelf: 'center',
   },

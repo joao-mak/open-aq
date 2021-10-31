@@ -38,8 +38,8 @@ const DetailsScreen = ({ route }) => {
           <Text>{error}</Text>
         </View>
       ) : (
-        <View>
-          <Text>{cityMeasurements.city}</Text>
+        <View style={styles.listContainer}>
+          <Text style={styles.title}>{`Measurements for ${city}`}</Text>
           <FlatList
             keyExtractor={(item, index) => index.toString()}
             data={cityMeasurements}
@@ -55,8 +55,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: 'center',
     justifyContent: 'center',
+  },
+  listContainer: {
+    marginTop: 35,
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 22,
+    padding: 20,
   },
 })
 export default DetailsScreen
